@@ -1,0 +1,394 @@
+{
+  "info": {
+    "name": "Library Management System API",
+    "description": "REST API for Online Library Management System",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Members",
+      "item": [
+        {
+          "name": "Get All Members",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/members"
+          }
+        },
+        {
+          "name": "Get Member by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/members/1"
+          }
+        },
+        {
+          "name": "Create Member",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/members",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\":\"John\",\"lastName\":\"Doe\",\"email\":\"john@example.com\",\"phone\":\"123-456-7890\"}"
+            }
+          }
+        },
+        {
+          "name": "Update Member",
+          "request": {
+            "method": "PUT",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/members/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"status\":\"inactive\"}"
+            }
+          }
+        },
+        {
+          "name": "Delete Member",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/members/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Get All Books",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books"
+          }
+        },
+        {
+          "name": "Get Book by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/books/1"
+          }
+        },
+        {
+          "name": "Create Book",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/books",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"isbn\":\"978-0-06-112008-4\",\"title\":\"To Kill a Mockingbird\",\"pubYear\":1960,\"publisher\":\"J.B. Lippincott\",\"language\":\"English\"}"
+            }
+          }
+        },
+        {
+          "name": "Update Book",
+          "request": {
+            "method": "PUT",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/books/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"language\":\"Spanish\"}"
+            }
+          }
+        },
+        {
+          "name": "Delete Book",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/books/1"
+          }
+        },
+        {
+          "name": "Add Author to Book",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/books/1/authors",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"authorId\":1}"
+            }
+          }
+        },
+        {
+          "name": "Add Category to Book",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/books/1/categories",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"categoryId\":1}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Book Copies",
+      "item": [
+        {
+          "name": "Get All Copies",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/copies"
+          }
+        },
+        {
+          "name": "Get Copy by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/copies/1"
+          }
+        },
+        {
+          "name": "Create Copy",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/copies",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bookId\":1,\"condition\":\"excellent\",\"status\":\"available\"}"
+            }
+          }
+        },
+        {
+          "name": "Update Copy",
+          "request": {
+            "method": "PUT",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/copies/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"condition\":\"fair\"}"
+            }
+          }
+        },
+        {
+          "name": "Get Available Copies for Book",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/copies/book/1/available"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Authors",
+      "item": [
+        {
+          "name": "Get All Authors",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/authors"
+          }
+        },
+        {
+          "name": "Create Author",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/authors",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\":\"Harper\",\"lastName\":\"Lee\"}"
+            }
+          }
+        },
+        {
+          "name": "Update Author",
+          "request": {
+            "method": "PUT",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/authors/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\":\"Nelle\"}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/categories"
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/categories",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Fiction\"}"
+            }
+          }
+        },
+        {
+          "name": "Create Subcategory",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/categories",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Science Fiction\",\"parentId\":1}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Loans",
+      "item": [
+        {
+          "name": "Get All Loans",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/loans"
+          }
+        },
+        {
+          "name": "Get Loan by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/loans/1"
+          }
+        },
+        {
+          "name": "Borrow Book",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/loans",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"memberId\":1,\"copyId\":1,\"dueDate\":\"2024-02-15\"}"
+            }
+          }
+        },
+        {
+          "name": "Return Book",
+          "request": {
+            "method": "PUT",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/loans/1/return"
+          }
+        },
+        {
+          "name": "Get Member Loans",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/loans/member/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reservations",
+      "item": [
+        {
+          "name": "Get All Reservations",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/reservations"
+          }
+        },
+        {
+          "name": "Create Reservation",
+          "request": {
+            "method": "POST",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/reservations",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"memberId\":1,\"copyId\":1,\"expiresAt\":\"2024-02-20\"}"
+            }
+          }
+        },
+        {
+          "name": "Cancel Reservation",
+          "request": {
+            "method": "PUT",
+            "header": [{
+              "key": "Content-Type",
+              "value": "application/json"
+            }],
+            "url": "{{baseUrl}}/api/reservations/1/cancel"
+          }
+        },
+        {
+          "name": "Get Member Reservations",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/reservations/member/1"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
